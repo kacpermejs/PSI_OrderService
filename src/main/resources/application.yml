@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:postgresql://localhost:5433/orders
+    username: mainuser
+    password: password
+  sql:
+    init:
+      mode: never
+      data-locations: classpath:/sql/data.sql
